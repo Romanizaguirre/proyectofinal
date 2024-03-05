@@ -1,0 +1,173 @@
+// scss/style.scss
+$font-family: 'Luminari', sans-serif;
+$base-font-size: 16px;
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e5eaf5;
+    font-family: $font-family;
+    font-size: $base-font-size;
+}
+
+nav {
+    background-color: #a0d2eb;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeIn 2s ease-in-out;
+
+    .navbar-brand img {
+        max-height: 30px;
+    }
+
+    .navbar-toggler-icon {
+        border: 1px solid white;
+    }
+
+    .nav-item {
+        margin-right: 10px;
+
+        .nav-link {
+            color: white;
+
+            &:hover {
+                color: #d0bdf4;
+            }
+        }
+    }
+}
+
+.main-content {
+    padding: 50px;
+
+    h1 {
+        font-size: 3rem; 
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 1.5rem; 
+        color: #555;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    .car-images {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        .image-link {
+            margin: 10px;
+            position: relative;
+            overflow: hidden;
+
+            &:hover img {
+                transform: scale(1.1);
+                filter: blur(5px); 
+            }
+        }
+    }
+}
+
+
+    .car-images {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .image-link {
+            margin: 10px;
+            position: relative;
+            overflow: hidden;
+
+            &:hover img {
+                transform: scale(1.1);
+            }
+
+            &:hover::after {
+                content: attr(data-tooltip);
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                padding: 10px;
+                background-color: #333;
+                color: white;
+                border-radius: 5px;
+                font-size: 1em;
+                opacity: 0.8;
+                white-space: nowrap;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+                object-fit: cover;
+                transition: transform 0.3s ease-in-out;
+            }
+        }
+    }
+
+.skyline {
+    image-orientation: unset;
+}
+
+footer {
+    background-color: #d0bdf4;
+    color: white;
+    padding: 10px;
+    text-align: center;
+
+    .social-media img {
+        max-width: 30px;
+        height: auto;
+        margin-right: 10px;
+    }
+
+    p {
+        font-size: 14px; 
+        margin-top: 10px;
+        font-weight: bold;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: 321px) and (max-width: 768px) {
+    .navbar-collapse {
+        flex-direction: column;
+
+        .nav-item {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+    .navbar-collapse {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 10px;
+
+        .nav-item {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+
+  
